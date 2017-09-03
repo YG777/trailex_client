@@ -1,12 +1,13 @@
 <div class="tc">
-    <h1>/movies</h1>
+    <h1>Favorite Trailers</h1>
   </div>
-  
-  <div class="w-100">
-    <div class="pa3 w-50 db center" ng-repeat="movie in movies.all">
-      <h2 class="f2"><a class="black dim" ui-sref="moviesIndex({movie})">{{movie}}</a></h2>
-      <p class="f4">{{movie}}</p>
-      <h1>movies page</h1>
-      {{ 1 + 1 }}
-    </div>
-  </div>
+
+ <ul class="col-xs-3" ng-repeat="movie in movies.all">
+<li>
+  {{movie.title}}          
+  <br/>
+  <img src="https://image.tmdb.org/t/p/w500/{{movie.poster}}" />
+  <br/>
+  {{movie.release_date}}
+</li>
+</ul>
