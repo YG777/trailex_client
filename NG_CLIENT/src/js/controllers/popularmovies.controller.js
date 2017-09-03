@@ -1,9 +1,9 @@
 angular.module('movieApp')
   .controller('PopularMoviesCtrl', PopularMoviesCtrl);
 
-PopularMoviesCtrl.$inject = ['PopularMovies'];
-function PopularMoviesCtrl(PopularMovies) {
-  this.all = PopularMovies.query();
+PopularMoviesCtrl.$inject = ['API', '$resource'];
+function PopularMoviesCtrl(API, $resource) {
+  this.all = $resource(`${API}/popular`).query();
 }
 
 
