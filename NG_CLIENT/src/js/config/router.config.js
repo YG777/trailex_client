@@ -12,11 +12,17 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controller: 'HomepageCtrl',
       controllerAs: 'home'
     })
-    .state('moviesIndex', {
-      url: '/movies',
-      templateUrl: '/js/views/movies/index.html',
-      controller: 'MoviesIndexCtrl',
-      controllerAs: 'movies'
+    .state('popularmovies', {
+      url: '/popularmovies',
+      templateUrl: '/js/views/popularmovies.html',
+      controller: 'PopularMoviesCtrl',
+      controllerAs: 'popularmovies'
+    })
+    .state('search', {
+      url: '/search',
+      templateUrl: '/js/views/search.html',
+      controller: 'SearchCtrl',
+      controllerAs: 'search'
     });
   $urlRouterProvider.otherwise('/');
 }
