@@ -1,7 +1,12 @@
 <div class="tc">
-    <h1>Favorite Trailers</h1>
+    <h1>Popular movies</h1>
   </div>
-
+  <form action="/search" method="GET">
+    <input type="text" name="searchterm" />
+    <br />
+    <button>Search</button>
+    </form>
+    
  <ul class="col-xs-3" ng-repeat="movie in popularmovies.all">
 <li>
   {{movie.title}}          

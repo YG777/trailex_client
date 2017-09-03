@@ -1,11 +1,19 @@
 class SearchController < ApplicationController
     def index
-        @searchTerm = params[:searchterm]
-        @search1=Search.new(1, @searchTerm, "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg", "2017-08-03")
+        searchTerm = params[:searchterm]
 
-        @search2=Search.new( 2, @searchTerm, "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg", "2017-08-03")
+        uri = "https://api.themoviedb.org/3/search/movie?api_key=83e72b5e80c8d6af6be012cfc689dfb8&query=#{searchTerm}&page=1&include_adult=false";
+        response = HTTParty.get(uri);
+        
+         movies = []
+         response["results"].each do |item|
+             movie = Search.new(item["id"], item["title"], item["poster_path"], item["release_date"])
+     
+             movies.push(movie)
+         end
+     
 
-        render json: [@search1, @search2]
+        render json: movies
     end
 end
 
