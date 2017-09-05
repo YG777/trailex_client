@@ -1,4 +1,5 @@
 class PopularController < ApplicationController
+    
     def index
         # @movie1= Movie.new(1, "spiderman", "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg", "2017-08-03")
         # @movie2= Movie.new(2, "spiderwoman", "/c24sv2weTHPsmDa7jEMN0m2P3RT.jpg", "2017-08-03")
@@ -6,7 +7,7 @@ class PopularController < ApplicationController
    
     movies = []
     response["results"].each do |item|
-        movie = Movie.new(item["id"], item["title"], item["poster_path"], item["release_date"])
+        movie = PopularMovie.new(item["id"], item["title"], item["poster_path"], item["release_date"])
 
         movies.push(movie)
     end
@@ -14,7 +15,7 @@ class PopularController < ApplicationController
     end
 end
 
-class Movie
+class PopularMovie
    def initialize(id, title, poster, release_date)
         @id=id 
         @title=title

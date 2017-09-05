@@ -1,5 +1,6 @@
 angular
   .module('movieApp', [
     'ui.router',
-    'ngResource'
+    'ngResource',
+    'angular-jwt'
   ]);
