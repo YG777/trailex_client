@@ -35,6 +35,14 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       templateUrl: '/js/views/search.html',
       controller: 'SearchCtrl',
       controllerAs: 'search'
+    })
+
+    .state('watchlist', {
+      url: '/watchlist',
+      templateUrl: '/js/views/watchlist/index.html',
+      controller: 'WatchlistCtrl',
+      controllerAs: 'vm'
     });
+
   $urlRouterProvider.otherwise('/');
 }

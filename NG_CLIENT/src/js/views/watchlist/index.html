@@ -1,0 +1,9 @@
+<h1>Watchlist index</h1>
+
+<h1>To Watch</h1>
+<ul>
+  <li ng-repeat="movies in watchlist">
+    <h2 ui-sref="moviesShow({ id: movie.id })">{{ movie.title }}</h2>
+    <h4>{{ movie.user.username }}</h4>
+  </li>
+</ul>
