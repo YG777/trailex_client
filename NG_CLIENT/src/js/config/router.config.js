@@ -6,7 +6,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $locationProvider.html5Mode(true);
 
   $stateProvider
-    .state('home', {
+    .state('homepage', {
       url: '/',
       templateUrl: '/js/views/homepage.html',
       controller: 'HomepageCtrl',

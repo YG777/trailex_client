@@ -13,9 +13,9 @@ class AuthenticationsController < ApplicationController
   
     def login
       user = User.find_by_email(params[:email])
-      puts user
       if user && user.authenticate(params[:password])
         token = Auth.encode({id: user.id})
+        
         render json: {token: token, user: UserSerializer.new(user)}, status: :ok
       else
         render json: { errors:["Invalid login credentials"] }, status: 401
