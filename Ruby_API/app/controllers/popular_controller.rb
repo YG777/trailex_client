@@ -3,12 +3,11 @@ class PopularController < ApplicationController
     response = HTTParty.get("https://api.themoviedb.org/3/movie/popular?api_key=83e72b5e80c8d6af6be012cfc689dfb8&language=en-US&page=1")
    
     movies = []
-    response["results"].each do |item|
-        movie = PopularMovie.new(item["id"], item["title"], item["poster_path"], item["release_date"])
-
-        movies.push(movie)
-    end
-    render json: movies
+        response["results"].each do |item|
+            movie = PopularMovie.new(item["id"], item["title"], item["poster_path"], item["release_date"])
+            movies.push(movie)
+        end
+        render json: movies
     end
 end
 

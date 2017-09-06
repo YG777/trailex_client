@@ -7,4 +7,5 @@ function SearchCtrl(API, $resource, $location) {
   this.searchTerm = searchTerm;
   var items = $resource(`${API}search?searchterm=${searchTerm}`);
   this.all = items.query();
+  
 }

@@ -8,7 +8,7 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
   $stateProvider
     .state('homepage', {
       url: '/',
-      templateUrl: '/js/views/homepage.html',
+      templateUrl: '/js/views/home.html',
       controller: 'HomepageCtrl',
       controllerAs: 'home'
     })
@@ -37,12 +37,21 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: 'search'
     })
 
-    .state('watchlist', {
-      url: '/watchlist',
+    .state('watchlistIndex', {
+      url: '/watchlist/',
       templateUrl: '/js/views/watchlist/index.html',
       controller: 'WatchlistCtrl',
+      controllerAs: 'vm'
+    })
+
+    .state('moviesShow', {
+      url: '/movie/:id',
+      templateUrl: '/js/views/movies/show.html',
+      controller: 'MoviesCtrl',
       controllerAs: 'vm'
     });
 
   $urlRouterProvider.otherwise('/');
 }
+
+
