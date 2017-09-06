@@ -1,8 +1,7 @@
 class MovieController < ApplicationController
   def show
-    movie1 = ShowMovie.new(params[:id], "Fear and loathing", "asfdsdaf", 1997)
-    movie2 = ShowMovie.new(params[:id], "Bat out of hell", "something", 2017)
-    render json: [movie1, movie2]
+    movie = ShowMovie.new(params[:id], "Fear and loathing", "asfdsdaf", 1997)
+    render json: movie
   end
 end
 
