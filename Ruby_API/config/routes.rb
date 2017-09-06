@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   # scope :api do
     resources :comments
     resources :watchlists
-    resources :movies
+    resources :movie
     resources :popular
     resources :search
     resources :users, except: [:create]
