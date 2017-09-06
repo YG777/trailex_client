@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   # scope :api do
-    resources :comments
     resources :watchlists
     resources :movie
     resources :popular
@@ -8,5 +7,6 @@ Rails.application.routes.draw do
     resources :users, except: [:create]
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
-  # end
+    get 'movie/:id/comments', to: 'movie#comments'
+    # end
 end

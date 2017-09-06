@@ -18,6 +18,15 @@ class MovieController < ApplicationController
       videoKeys)
     render json: showMovie
   end
+
+  def comments
+    movie_id = params[:id]
+    @comment1 = Comments.new(1, movie_id, "this is a great movie!")
+    @comment2 = Comments.new(2, movie_id, "very boooring, fell asleep!")
+    @comment3 = Comments.new(1, movie_id, "will watch it gain")
+    @comment4 = Comments.new(2, movie_id, "classic")
+    render json: [@comment1, @comment2, @comment3, @comment4]
+  end
 end
 
 class ShowMovie
@@ -29,3 +38,13 @@ class ShowMovie
     @video_keys = video_keys
   end
 end
+
+
+class Comments
+  def initialize(user_id, movie_id, body )
+    @user_id = user_id
+    @movie_id = movie_id
+    @body = body
+  end
+end
+
