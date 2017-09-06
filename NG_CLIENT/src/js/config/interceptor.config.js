@@ -1,8 +1,8 @@
 angular
   .module('movieApp')
-  .config(Interceptor);
+  .config(Inteceptors);
 
-Interceptor.$inject = ['$httpProvider'];
-function Interceptor($httpProvider){
-  return $httpProvider.interceptors.push('AuthInterceptor');
+Inteceptors.$inject = ['$httpProvider'];
+function Inteceptors($httpProvider){
+  $httpProvider.interceptors.push('AuthInterceptor');
 }
