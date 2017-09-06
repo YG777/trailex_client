@@ -44,9 +44,9 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: 'vm'
     })
 
-    .state('moviesShow', {
+    .state('movieIndex', {
       url: '/movie/:id',
-      templateUrl: '/js/views/movies/show.html',
+      templateUrl: '/js/views/movie/index.html',
       controller: 'MoviesCtrl',
       controllerAs: 'vm'
     });

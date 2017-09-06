@@ -2,9 +2,9 @@ angular
   .module('movieApp')
   .controller('MoviesCtrl', MoviesCtrl);
 
-MoviesCtrl.$inject = ['Movie', '$stateParams'];
-function MoviesCtrl(Movie, $stateParams) {
-  this.id = $stateParams.id;
+MoviesCtrl.$inject = ['API', '$stateParams', '$resource'];
+function MoviesCtrl(API, $stateParams, $resource) {
+  this.movie = $resource(`${API}/movie/${$stateParams.id}`).get();
 }
 
 
