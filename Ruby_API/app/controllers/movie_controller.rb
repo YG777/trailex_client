@@ -1,7 +1,8 @@
 class MovieController < ApplicationController
   def show
-    movie = ShowMovie.new(params[:id], "Fear and loathing", "asfdsdaf", 1997)
-    render json: movie
+    response = HTTParty.get("https://api.themoviedb.org/3/movie/#{params[:id]}?api_key=83e72b5e80c8d6af6be012cfc689dfb8&append_to_response=videos")
+    showMovie = ShowMovie.new(response["id"], response["title"], response["poster_path"], response["release_date"])
+    render json: showMovie
   end
 end
 
