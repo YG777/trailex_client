@@ -9,10 +9,12 @@
     
  <ul class="col-xs-3" ng-repeat="movie in popularmovies.all">
 <li>
+  <a href="/movie/{{movie.id}}">
   {{movie.title}}          
   <br/>
   <img src="https://image.tmdb.org/t/p/w150/{{movie.poster}}" />
   <br/>
   {{movie.release_date}}
+  </a>
 </li>
 </ul>
