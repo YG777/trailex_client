@@ -2,12 +2,11 @@
 <input type="text" name="searchterm" />
 <br />
 <button class="search-button">Search</button>
-<button>Add to my list</button>
 </form>
 
 <div class="row">
     <div >
-<ul class="col-md-3 col-sm-6 col-xs-8" ng-repeat="movie in search.all">
+<ul class="col-md-3 col-sm-6 col-xs-8" id="grid-items" ng-repeat="movie in search.all">
         <li>
           <a href="/movie/{{movie.id}}">
           {{movie.title}}          

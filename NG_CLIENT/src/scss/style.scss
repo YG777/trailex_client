@@ -1,0 +1,46 @@
+//==============LAYOUTS==========================//
+.auth-wrapper {
+    width: 20em;
+    float: none;
+    margin: 0 auto;
+    padding-top: 5%; 
+}
+.movie-wrapper {
+    width: 40em;
+    float: none;
+    margin: 0 auto;
+    padding-top: 5%;
+    border: solid red 1px;
+}
+footer{
+    background-color: #424558;
+     position: fixed;
+     bottom: 0;
+     left: 0;
+     right: 0;
+     height: 35px;
+     text-align: center;
+     color: #CCC;
+ }
+ 
+ footer p {
+     padding: 10.5px;
+     margin: 0px;
+     line-height: 100%;
+ }
+//popular and search grid items
+#grid-items{
+    list-style-type: none;
+    border: solid red 1px;
+}
+#grid-items > li{
+height:280px;
+border: solid blue 1px;
+}
+// --------------------------//
+
+//--------HEADINGS------------//
+.main-header {
+    padding-bottom: 1%;
+}
+//----------------------------//

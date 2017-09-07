@@ -37,8 +37,8 @@ function Router($stateProvider, $urlRouterProvider, $locationProvider) {
       controllerAs: 'search'
     })
 
-    .state('watchlistIndex', {
-      url: '/watchlist/',
+    .state('watchlist', {
+      url: '/watchlist',
       templateUrl: '/js/views/watchlist/index.html',
       controller: 'WatchlistCtrl',
       controllerAs: 'vm'

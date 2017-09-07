@@ -3,17 +3,17 @@
         <form action="/search" method="GET">
           <h3>Search and and add to you watchlist</h3>
           <input type="text" name="searchterm" />
-    
+          <button class="search-button">Search</button>
     </form>
   </div>
 
-    <div>
+    <div class="main-header">
         <h1>Trending now</h1>
       </div>
 
     <div class="row">
     <div >
-    <ul class="col-md-3 col-sm-6 col-xs-8" ng-repeat="movie in popularmovies.all">
+    <ul class="col-md-3 col-sm-6 col-xs-8" id="grid-items" ng-repeat="movie in popularmovies.all">
         <li>
           <a href="/movie/{{movie.id}}">
           {{movie.title}}          
