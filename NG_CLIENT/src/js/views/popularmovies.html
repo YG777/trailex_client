@@ -1,20 +1,28 @@
-<div class="tc">
-    <h1>Popular movies</h1>
-  </div>
-  <form action="/search" method="GET">
-    <input type="text" name="searchterm" />
-    <br />
-    <button>Search</button>
-    </form>
+
+    <div>
+        <form action="/search" method="GET">
+          <h3>Search and and add to you watchlist</h3>
+          <input type="text" name="searchterm" />
     
- <ul class="col-xs-3" ng-repeat="movie in popularmovies.all">
-<li>
-  <a href="/movie/{{movie.id}}">
-  {{movie.title}}          
-  <br/>
-  <img src="https://image.tmdb.org/t/p/w150/{{movie.poster}}" />
-  <br/>
-  {{movie.release_date}}
-  </a>
-</li>
-</ul>
+    </form>
+  </div>
+
+    <div>
+        <h1>Trending now</h1>
+      </div>
+
+    <div class="row">
+    <div >
+    <ul class="col-md-3 col-sm-6 col-xs-8" ng-repeat="movie in popularmovies.all">
+        <li>
+          <a href="/movie/{{movie.id}}">
+          {{movie.title}}          
+          <br/>
+          <img src="https://image.tmdb.org/t/p/w160/{{movie.poster}}" />
+          <br/>
+          {{movie.release_date}}
+          </a>
+        </li>
+      </ul>    
+    </div>   
+  </div>

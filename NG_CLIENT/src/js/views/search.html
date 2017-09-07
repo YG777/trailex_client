@@ -1,10 +1,13 @@
 <form action="/search" method="GET">
 <input type="text" name="searchterm" />
 <br />
-<button>Search</button>
+<button class="search-button">Search</button>
+<button>Add to my list</button>
 </form>
 
-<ul class="col-xs-3" ng-repeat="movie in search.all">
+<div class="row">
+    <div >
+<ul class="col-md-3 col-sm-6 col-xs-8" ng-repeat="movie in search.all">
         <li>
           <a href="/movie/{{movie.id}}">
           {{movie.title}}          
@@ -15,3 +18,5 @@
           </a>
         </li>
         </ul>
+      </div>
+    </div>

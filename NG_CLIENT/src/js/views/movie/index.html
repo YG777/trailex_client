@@ -1,13 +1,17 @@
 <div> 
         <h1>{{vm.movie.title}}</h1>
-        {{ vm.movie.id }}
+        <!-- {{ vm.movie.id }} -->
 </div>
 
 <iframe width="560" height="315" ng-src="{{getIframeSrc(vm.movie.video_keys[0])}}" frameborder="0" allowfullscreen></iframe>
 
-                <h3>{{vm.movie.title}}</h3>
-                {{ vm.movie.id }}
-
+                <!-- <h3>{{vm.movie.title}}</h3>
+                {{ vm.movie.id }} -->
+<div>
+  <button>Add to my list</button>
+</div>
+               
+<h5>Comments</h5>
 <ul>
 <li ng-repeat="comment in vm.comments">
   <p>{{ comment.body }}</p>
