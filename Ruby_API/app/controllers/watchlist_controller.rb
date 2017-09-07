@@ -2,6 +2,13 @@ class WatchlistController < ApplicationController
   def index
     render json: Watchlist.where(user_id: @current_user.id)
   end
+
+  def create
+    user_id = @current_user.id
+    movie_id = params[:movie_id]
+    movie_title = params[:movie_title]
+    Watchlist.create(user_id: user_id,  movie_id: movie_id,  movie_title: movie_title)
+  end
 end
 =begin
 class WatchlistItem
