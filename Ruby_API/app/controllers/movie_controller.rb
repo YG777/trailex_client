@@ -26,6 +26,7 @@ class MovieController < ApplicationController
     @comment3 = Comments.new(1, movie_id, "will watch it gain")
     @comment4 = Comments.new(2, movie_id, "classic")
     render json: [@comment1, @comment2, @comment3, @comment4]
+    puts  [@comment1, @comment2, @comment3, @comment4]
   end
 end
 

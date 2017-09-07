@@ -4,3 +4,13 @@
 </div>
 
 <iframe width="560" height="315" ng-src="{{getIframeSrc(vm.movie.video_keys[0])}}" frameborder="0" allowfullscreen></iframe>
+
+                <h3>{{vm.movie.title}}</h3>
+                {{ vm.movie.id }}
+
+<ul>
+<li ng-repeat="comment in vm.comments">
+  <p>{{ comment.body }}</p>
+                         
+</li>                     
+</ul>
