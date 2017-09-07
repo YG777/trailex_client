@@ -9,7 +9,10 @@
                 <!-- <h3>{{vm.movie.title}}</h3>
                 {{ vm.movie.id }} -->
 <div>
-  <button>Add to my list</button>
+  <button ng-click="watchlist()">
+    Watchlist
+    <span class="glyphicon glyphicon-{{watchlistIcon}}"></span>
+  </button>
 </div>
                
 <h5>Comments</h5>
