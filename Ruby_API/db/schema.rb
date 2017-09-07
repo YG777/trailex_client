@@ -23,14 +23,6 @@ ActiveRecord::Schema.define(version: 20170904205857) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "movies", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "tittle"
-    t.string "poster_path"
-    t.integer "release_date"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "username"
     t.string "firstname"
@@ -44,6 +36,7 @@ ActiveRecord::Schema.define(version: 20170904205857) do
   create_table "watchlists", force: :cascade do |t|
     t.integer "user_id"
     t.integer "movie_id"
+    t.string "movie_title"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
