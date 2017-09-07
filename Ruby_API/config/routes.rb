@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   # scope :api do
-    resources :watchlists
+    resources :watchlist
     resources :movie
     resources :popular
     resources :search

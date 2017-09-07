@@ -1,5 +1,29 @@
-class WatchlistsController < ApplicationController
-  before_action :set_watchlist, only: [:show, :update, :destroy]
+class WatchlistController < ApplicationController
+  def index
+    item1=WatchlistItem.new(1122, "Batman")
+    item2=WatchlistItem.new(1322, "Titanic")
+    render json: [item1, item2]
+  end
+end
+
+class WatchlistItem
+  def initialize(movie_id, movie_title)
+    @movie_id = movie_id
+    @movie_title = movie_title
+  end
+end
+
+
+
+=begin
+  
+rescue => exception
+  
+else
+  
+ensure
+  
+end  before_action :set_watchlist, only: [:show, :update, :destroy]
 
   # GET /watchlists
   def index
@@ -49,3 +73,4 @@ class WatchlistsController < ApplicationController
       params.require(:watchlist).permit(:user_id, :movie_id)
     end
 end
+=end
