@@ -9,26 +9,27 @@ function MoviesCtrl(API, $stateParams, $resource, $scope) {
     return 'https://www.youtube.com/embed/' + src;
   };
 
-  $scope.watchlist = function () {
+  $scope.addToWatchlist = function () {
     var movieId = $scope.vm.movie.id;
-    if($scope.isInWatchlist){
-      $resource(`${API}/watchlist/${movieId}`, {}, {
-        'remove': { method: 'delete' }
-      }).remove();
+    $scope.vm.movie.in_watchlist = true;
+    $resource(`${API}/watchlist`, {
+      movie_id: movieId,
+      movie_title: $scope.vm.movie.title
+    }, {
+      'add': {
+        method: 'post'
+      }
+    }).add();
+  };
 
-      $scope.isInWatchlist = false;
-      $scope.watchlistIcon = "plus";
-    }else{
-      $resource(`${API}/watchlist`, {
-        movie_id: movieId,
-        movie_title: $scope.vm.movie.title
-      }, {
-        'add': { method: 'post' }
-      }).add();
-
-      $scope.isInWatchlist = true;
-      $scope.watchlistIcon = "minus";
-    }
+  $scope.removeFromWatchlist = function () {
+    var movieId = $scope.vm.movie.id;
+    $scope.vm.movie.in_watchlist = false;
+    $resource(`${API}/watchlist/${movieId}`, {}, {
+      'remove': {
+        method: 'delete'
+      }
+    }).remove();
   };
 
   var movie = $resource(`${API}/movie/${$stateParams.id}`).get();
@@ -36,6 +37,4 @@ function MoviesCtrl(API, $stateParams, $resource, $scope) {
 
   var comments = $resource(`${API}/movie/${$stateParams.id}/comments`).query();
   this.comments = comments;
-
-  $scope.watchlistIcon = "plus";
 }

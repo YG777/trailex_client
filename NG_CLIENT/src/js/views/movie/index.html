@@ -9,9 +9,11 @@
                 <!-- <h3>{{vm.movie.title}}</h3>
                 {{ vm.movie.id }} -->
 <div>
-  <button ng-click="watchlist()">
-    Watchlist
-    <span class="glyphicon glyphicon-{{watchlistIcon}}"></span>
+  <button ng-show="vm.movie.in_watchlist == false" ng-click="addToWatchlist()">
+    Add to watchlist
+  </button>
+  <button ng-show="vm.movie.in_watchlist" ng-click="removeFromWatchlist()">
+    Remove from watchlist
   </button>
 </div>
                
