@@ -15,9 +15,3 @@ u3 = User.create!(username: "Rob", firstname: "Rob", lastname: "Barnes",email: "
 u4 = User.create!(username: "Bob", firstname: "Bob", lastname: "Jones", email: "bob@ga.co",     password: "password", password_confirmation: "password")
 u5 = User.create!(username: "Sue", firstname: "Sue", lastname: "Lee",   email: "sue@ga.co",     password: "password", password_confirmation: "password")
 
-
-w1 = Watchlist.create!(user_id: 1, movie_id: 45654, movie_title: "title1")
-w2 = Watchlist.create!(user_id: 1, movie_id: 32597, movie_title: "title2")
-w3 = Watchlist.create!(user_id: 1, movie_id:  56547, movie_title: "title3")
-w4 = Watchlist.create!(user_id: 1, movie_id: 35466, movie_title: "title4")
-w5 = Watchlist.create!(user_id: 1, movie_id: 22245, movie_title: "title5")
