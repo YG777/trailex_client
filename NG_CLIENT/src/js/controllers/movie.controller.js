@@ -37,4 +37,19 @@ function MoviesCtrl(API, $stateParams, $resource, $scope) {
 
   var comments = $resource(`${API}/movie/${$stateParams.id}/comments`).query();
   this.comments = comments;
+
+  $scope.addComment = function () {
+    var comment = $scope.newComment;
+    var movieId = $scope.vm.movie.id;
+    $resource(`${API}/movie/${movieId}/comments`, {
+      comment: comment
+    }, {
+      'send': {
+        method: 'post'
+      }
+    }).send();
+
+    $scope.vm.comments.push({body: comment});
+    $scope.newComment = '';
+  };
 }
