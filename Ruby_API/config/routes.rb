@@ -8,5 +8,6 @@ Rails.application.routes.draw do
     post 'register', to: 'authentications#register'
     post 'login', to: 'authentications#login'
     get 'movie/:id/comments', to: 'movie#comments'
+    post 'movie/:id/comments', to: 'movie#addComment'
     # end
 end

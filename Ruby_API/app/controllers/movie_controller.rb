@@ -26,12 +26,14 @@ class MovieController < ApplicationController
 
   def comments
     movie_id = params[:id]
-    @comment1 = Comments.new(1, movie_id, "this is a great movie!")
-    @comment2 = Comments.new(2, movie_id, "very boooring, fell asleep!")
-    @comment3 = Comments.new(1, movie_id, "will watch it gain")
-    @comment4 = Comments.new(2, movie_id, "classic")
-    render json: [@comment1, @comment2, @comment3, @comment4]
-    puts  [@comment1, @comment2, @comment3, @comment4]
+    render json: Comment.where("comments.movie_id = #{movie_id}")
+  end
+
+  def addComment
+    movie_id = params[:id]
+    user_id = @current_user.id
+    comment = params[:comment]
+    Comment.create(movie_id: movie_id, user_id: user_id, body: comment)
   end
 end
 
@@ -46,12 +48,4 @@ class ShowMovie
   end
 end
 
-
-class Comments
-  def initialize(user_id, movie_id, body )
-    @user_id = user_id
-    @movie_id = movie_id
-    @body = body
-  end
-end
 
