@@ -1,28 +1,19 @@
+<div class="main-header">
+  <h1>Trending now</h1>
+</div>
 
-    <div>
-        <form action="/search" method="GET">
-          <h3>Search and and add to you watchlist</h3>
-          <input type="text" name="searchterm" />
-          <button class="search-button">Search</button>
-    </form>
-  </div>
-
-    <div class="main-header">
-        <h1>Trending now</h1>
-      </div>
-
-    <div class="row">
-    <div >
+<div class="row">
+  <div>
     <ul class="col-md-3 col-sm-6 col-xs-8" id="grid-items" ng-repeat="movie in popularmovies.all">
-        <li>
-          <a href="/movie/{{movie.id}}">
+      <li class="card-holder">
+        <a class="card-title" href="/movie/{{movie.id}}">
           {{movie.title}}          
           <br/>
           <img src="https://image.tmdb.org/t/p/w160/{{movie.poster}}" />
           <br/>
           {{movie.release_date}}
           </a>
-        </li>
-      </ul>    
-    </div>   
+      </li>
+    </ul>
   </div>
+</div>

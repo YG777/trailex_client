@@ -22,14 +22,15 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" ui-sref="homepage">--LOGO--</a>
-            </div>
+              <a class="nav-logo"ui-sref="homepage">TRAILEX</a>
+
+            
   
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
               <ul class="nav navbar-nav navbar-right">
-                <li>
-                  <p class="navbar-text">Welcome, {{ main.user.username }}</p>
+                    <li ng-hide="main.user">
+                  <pclass="navbar-text">{{ main.user.username }}</p>
                 </li>
                 <li ng-hide="main.user">
                   <a ui-sref="register">Register</a>
@@ -46,7 +47,14 @@
                 <li ng-show="main.user">
                   <a ng-click="main.logout()">Logout</a>
                 </li>
+              </div>
               </ul>
+              <div class="search-form"  ng-show="main.user">
+                  <form action="/search" method="GET">
+                    <input class ="search-field" type="text" name="searchterm" />
+                    <button class="search-button">Search</button>
+                  </form>
+                </div>
             </div><!-- /.navbar-collapse -->
           </div><!-- /.container-fluid -->
         </nav>
@@ -55,7 +63,7 @@
 
     <main class="container" ui-view></main>
     <footer>
-        <p>© 2017<a style="color:#0a93a6; text-decoration:none;" href="#"> Trailex</a>, All rights reserved 2016-2017.</p>
+        <p>© 2017<a style="text-decoration:none;" href="#"> TRAILEX</a>, All rights reserved 2016-2017.</p>
     </footer>
   </body>
 </html>
