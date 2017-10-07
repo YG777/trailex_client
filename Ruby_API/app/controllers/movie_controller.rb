@@ -26,14 +26,16 @@ class MovieController < ApplicationController
 
   def comments
     movie_id = params[:id]
-    render json: Comment.where("comments.movie_id = #{movie_id}")
+    comments = Comment.where("comments.movie_id = #{movie_id}")
+    render json: comments
   end
 
   def addComment
     movie_id = params[:id]
     user_id = @current_user.id
+    user_name =  @current_user.username
     comment = params[:comment]
-    Comment.create(movie_id: movie_id, user_id: user_id, body: comment)
+    Comment.create(movie_id: movie_id, user_id: user_id, body: comment, username: user_name)
   end
 end
 
