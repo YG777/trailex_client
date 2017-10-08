@@ -1,2 +1,2 @@
 angular.module('movieApp')
-  .constant('API', `http://localhost:3000/`);
+  .constant('API', 'https://trailex-api-yg777.herokuapp.com/');
