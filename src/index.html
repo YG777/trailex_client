@@ -14,7 +14,7 @@
 <body ng-controller="MainCtrl as main">
   <header>
     <nav class="navbar navbar-default">
-      <div class="container">
+      <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"
@@ -24,30 +24,28 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="nav-logo" ui-sref="homepage">TRAILEX</a>
-
-
+          <a class="nav-logo" ui-sref="homepage" style="text-decoration:none">TRAILEX</a>
 
           <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-            <ul class="nav navbar-nav navbar-right">
+          <div class="collapse navbar-collapse" id="nav-cont">
+            <ul class="nav navbar-nav navbar-left">
               <li ng-hide="main.user">
                 <p class="navbar-text">{{ main.user.username }}</p>
               </li>
               <li ng-hide="main.user">
-                <a ui-sref="register">Register</a>
+                <a ui-sref="register" style="color: #f5f5f1">Register</a>
               </li>
               <li ng-hide="main.user">
-                <a ui-sref="login">Login</a>
+                <a ui-sref="login" style="color: #f5f5f1">Login</a>
               </li>
               <li ng-show="main.user">
-                <a ui-sref="popularmovies">Trailers</a>
+                <a ui-sref="popularmovies" style="color: #f5f5f1">Trailers</a>
               </li>
               <li ng-show="main.user">
-                <a ui-sref="watchlist">My List</a>
+                <a ui-sref="watchlist" style="color: #f5f5f1">My List</a>
               </li>
               <li ng-show="main.user">
-                <a ng-click="main.logout()">Logout</a>
+                <a ng-click="main.logout()" style="color: #f5f5f1">Logout</a>
               </li>
             </ul>
           </div>
