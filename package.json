@@ -7,7 +7,7 @@
     "postinstall": "bower install && gulp deploy",
     "start": "node index.js"
   },
-  "author": "Alex Chin <alex@alexchin.co.uk>",
+  "author": "Yekaterina Biryukova",
   "license": "ISC",
   "gulp": {
     "srcDir": "src/",
@@ -85,5 +85,8 @@
     "require-dir": "^0.3.1",
     "gulp-replace": "^0.5.4"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "engines": {
+    "node": "8.1.2"
+  }
 }
